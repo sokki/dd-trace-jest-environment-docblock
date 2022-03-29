@@ -1,0 +1,19 @@
+{
+    "name": "dd-trace-jest-environment-docblock",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+      "start": "yarn test && yarn test:dd",
+      "test": "DD_ENV=ci DD_TRACE_DEBUG=true jest",
+      "test:require": "DD_TRACE_DEBUG=true node -r dd-trace/ci/jest/env  ./node_modules/.bin/jest"
+    },
+    "jest": {
+      "testEnvironment": "./environment.js"
+    },
+    "dependencies": {
+      "dd-trace": "2.4.0",
+      "jest": "27.5.1"
+    }
+  }
+  
